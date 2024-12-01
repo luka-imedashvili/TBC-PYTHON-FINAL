@@ -1,0 +1,347 @@
+.user-s-1 {
+  background-color: $user-background;
+  padding-bottom: 60px;
+  padding-top: 40px;
+  @media (max-width: 770px) {
+    padding-top: 20px;
+  }
+  @media (max-width: 425px) {
+    padding-top: 10px;
+  }
+  @media (max-width: 770px) {
+    padding-bottom: 30px;
+  }
+  @media (max-width: 425px) {
+    padding-bottom: 10px;
+  }
+  .container {
+    @extend %container;
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    @media (max-width: 830px) {
+      flex-direction: column;
+      align-items: center;
+    }
+    .userdiv1 {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 20px;
+      @media (max-width: 830px) {
+        align-items: center;
+        width: 100%;
+      }
+      .profile {
+        background-color: $user-second-color;
+        padding: 25px 30px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        border-radius: 10px;
+        width: 355px;
+        @media (max-width: 830px) {
+          width: 100%;
+        }
+        @media (max-width: 510px) {
+          padding: 15px;
+        }
+        .person {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 20px;
+          h2 {
+            color: $user-background;
+            text-align: center;
+            font-family: Arial;
+            font-size: 28px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            @media (max-width: 510px) {
+              font-size: 23px;
+            }
+          }
+          img {
+            width: 250px;
+          }
+        }
+        .personinfodiv {
+          display: flex;
+          justify-content: space-between;
+          @media (max-width: 510px) {
+            justify-content: space-between;
+          }
+          .personinfo {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            gap: 35px;
+            width: 100%;
+            @media (max-width: 830px) {
+              justify-content: start;
+            }
+            @media (max-width: 510px) {
+              justify-content: space-between;
+              // gap: 30px;
+            }
+            .info1 {
+              display: flex;
+              flex-direction: column;
+              gap: 10px;
+              h3 {
+                @extend %edit;
+              }
+              h5 {
+                color: var(--Grey-1, #a3a3a3);
+                font-family: Arial;
+                font-size: 17px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: normal;
+                text-transform: uppercase;
+                @media (max-width: 510px) {
+                  font-size: 16px;
+                }
+              }
+            }
+            .info2 {
+              display: flex;
+              flex-direction: column;
+              gap: 9px;
+              max-width: 150px;
+              width: 100%;
+              h3 {
+                @extend %edit;
+              }
+              h5 {
+                @extend %usertext;
+              }
+            }
+          }
+          .personality {
+            @extend %personality;
+            max-width: 350px;
+            padding: 0;
+            display: none;
+            @media (max-width: 830px) {
+              display: flex;
+              max-width: 240px;
+            }
+            @media (max-width: 650px) {
+              align-items: center;
+            }
+            @media (max-width: 510px) {
+              display: none;
+            }
+            .persdiv {
+              @media (max-width: 650px) {
+                max-width: 110px;
+              }
+            }
+          }
+        }
+      }
+      .quote {
+        display: flex;
+        gap: 25px;
+        padding: 22px 30px;
+        background-color: $user-second-color;
+        border-radius: 10px;
+        max-width: 355px;
+        @media (max-width: 830px) {
+          max-width: 788px;
+          width: 100%;
+        }
+        @media (max-width: 510px) {
+          padding: 15px;
+          gap: 15px;
+        }
+        i {
+          color: #88776a;
+          font-size: 25px;
+        }
+        p {
+          display: flex;
+          flex-wrap: wrap;
+          align-items: center;
+          @extend %usertext;
+        }
+      }
+    }
+    .userdiv2 {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      .personality1 {
+        display: none;
+        @extend %personality;
+        @media (max-width: 510px) {
+          display: flex;
+        }
+      }
+      .bio {
+        @extend %usercards;
+        h3 {
+          @extend %usertitles;
+          max-width: 830px;
+          width: 100%;
+        }
+        p {
+          @extend %usertext;
+          max-width: 830px;
+          width: 100%;
+        }
+      }
+      .liked {
+        @extend %usercards;
+        .likedtitle {
+          display: flex;
+          justify-content: space-between;
+          width: 100%;
+          max-width: 580px;
+          .heart {
+            display: flex;
+            gap: 5px;
+            .fa-heart {
+              color: $user-background;
+              font-size: 25px;
+              display: flex;
+              align-items: center;
+              @media (max-width: 1110px) {
+                font-size: 20px;
+              }
+              @media (max-width: 510px) {
+                font-size: 17px;
+              }
+            }
+            h3 {
+              @extend %usertitles;
+              @media (max-width: 510px) {
+                display: flex;
+                align-items: center;
+                font-size: 17px;
+                gap: 10px;
+              }
+            }
+          }
+
+          a {
+            @extend %usertitles;
+            display: none;
+            @media (max-width: 930px) {
+              display: block;
+            }
+            @media (max-width: 830px) {
+              display: none;
+            }
+            @media (max-width: 510px) {
+              display: flex;
+              font-size: 17px;
+            }
+          }
+        }
+        .likedbooks {
+          display: flex;
+          justify-content: space-around;
+          width: 100%;
+          @media (max-width: 830px) {
+            justify-content: space-between;
+          }
+          @media (max-width: 510px) {
+            justify-content: space-between;
+          }
+          img {
+            width: 150px;
+            height: 225px;
+            border-radius: 5px;
+            // margin-right: 20px;
+            @media (max-width: 510px) {
+              // margin-right: 40px;
+            }
+            @media (max-width: 1310px) {
+              width: 100px;
+              height: 149px;
+            }
+            @media (max-width: 930px) {
+              width: 120px;
+              height: 179px;
+            }
+            @media (max-width: 900px) {
+              width: 100px;
+              height: 149px;
+            }
+            @media (max-width: 385px) {
+              width: 85px;
+              height: 127px;
+            }
+          }
+          .hp {
+            display: none;
+            @media (max-width: 1310px) {
+              display: block;
+            }
+            @media (max-width: 1210px) {
+              display: none;
+            }
+            @media (max-width: 830px) {
+              display: block;
+            }
+            @media (max-width: 730px) {
+              display: none;
+            }
+          }
+          .martin {
+            @media (max-width: 1085px) {
+              display: none;
+            }
+            @media (max-width: 830px) {
+              display: block;
+            }
+            @media (max-width: 620px) {
+              display: none;
+            }
+          }
+          .wood {
+            @media (max-width: 510px) {
+              margin-right: 0px;
+            }
+          }
+          .seeall {
+            width: 150px;
+            height: 225px;
+            border-radius: 5px;
+            background-color: $header-background;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            @media (max-width: 1310px) {
+              width: 100px;
+              height: 149px;
+            }
+            @media (max-width: 930px) {
+              display: none;
+            }
+            @media (max-width: 830px) {
+              display: flex;
+            }
+            @media (max-width: 510px) {
+              display: none;
+            }
+            h4 {
+              @extend %usertitles;
+              text-align: center;
+            }
+          }
+        }
+      }
+      .personality {
+        @extend %personality;
+        @media (max-width: 830px) {
+          display: none;
+        }
+      }
+    }
+  }
+}

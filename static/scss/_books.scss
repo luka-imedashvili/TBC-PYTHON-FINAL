@@ -1,0 +1,401 @@
+.books-s-1 {
+  @extend %s-1;
+  padding-bottom: 60px;
+  @media (max-width: 770px) {
+    padding-bottom: 30px;
+  }
+  @media (max-width: 425px) {
+    padding-bottom: 10px;
+  }
+  .container {
+    @extend %container;
+    display: flex;
+    gap: 120px;
+    @media (max-width: 1320px) {
+      gap: 60px;
+    }
+    @media (max-width: 1090px) {
+      justify-content: center;
+    }
+
+    .filter {
+      display: flex;
+      flex-direction: column;
+      max-width: fit-content;
+      @media (max-width: 1090px) {
+        display: none;
+      }
+      .category1 {
+        @extend %category;
+        h3 {
+          margin-top: 0px;
+          padding-bottom: 5px;
+        }
+      }
+      .category {
+        display: flex;
+        flex-direction: column;
+        @extend %category;
+      }
+      .price,
+      .distance {
+        input[type="text"] {
+          border-radius: 5px;
+          border: 1px solid $secondary;
+          background-color: #d7bfad;
+          padding: 12px 6px;
+          &:focus {
+            outline: none;
+            border: 2px solid #837366;
+            font-family: $main-font;
+            font-size: 21x;
+          }
+          &::placeholder {
+            color: #472d1c;
+            font-family: $main-font;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+          }
+        }
+        input[type="submit"] {
+          border-radius: 6px;
+          border: 1px solid #796751;
+          background: #544a41;
+          padding: 10px 0;
+          color: #d7bfad;
+          font-family: $main-font;
+          font-size: 21px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: normal;
+          cursor: pointer;
+          &:hover {
+            background-color: rgb(86, 65, 55);
+          }
+        }
+      }
+    }
+    .books {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
+      @media (max-width: 500px) {
+        gap: 20px;
+      }
+      .bookdiv {
+        display: flex;
+        gap: 55px;
+        @media (max-width: 1150px) {
+          gap: 25px;
+        }
+        @media (max-width: 1090px) {
+          gap: 55px;
+        }
+        @media (max-width: 890px) {
+          gap: 25px;
+        }
+        @media (max-width: 425px) {
+          gap: 12px;
+        }
+        .column1,
+        .column2,
+        .column3 {
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+          @media (max-width: 400px) {
+            gap: 12px;
+          }
+          .filtersdiv {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            .grid,
+            .list {
+              @extend %gridlist;
+              display: none;
+              @media (max-width: 700px) {
+                display: flex;
+              }
+              @media (max-width: 470px) {
+                width: 36px;
+                height: 36px;
+              }
+            }
+          }
+          .bookcard {
+            width: 235px;
+            border-radius: 15px;
+            border: 1px solid $border-color;
+            padding: 20px 20px;
+            cursor: pointer;
+            @media (max-width: 1260px) {
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              padding: 0px 20px;
+              height: 278px;
+            }
+            @media (max-width: 1090px) {
+              height: 310px;
+              padding: 20px 20px;
+            }
+            @media (max-width: 1260px) {
+              width: 200px;
+            }
+            @media (max-width: 1090px) {
+              width: 235px;
+            }
+            @media (max-width: 820px) {
+              padding: 0px 20px;
+              height: 278px;
+              width: 200px;
+            }
+            @media (max-width: 470px) {
+              width: 160px;
+            }
+            @media (max-width: 400px) {
+              width: 148px;
+              height: 255px;
+            }
+            &:hover {
+              background-color: $header-background;
+              border: 1px solid #a59181;
+            }
+            .bestsimgwrapper {
+              @include flex(row, center, start, wrap);
+              gap: 15px;
+              padding-bottom: 10px;
+              @media (max-width: 710px) {
+                justify-content: center;
+              }
+              img {
+                width: 116px;
+                height: 174px;
+                @media (max-width: 1260px) {
+                  width: 95px;
+                  height: 144px;
+                }
+                @media (max-width: 1090px) {
+                  width: 116px;
+                  height: 174px;
+                }
+                @media (max-width: 820px) {
+                  width: 95px;
+                  height: 144px;
+                }
+              }
+            }
+            .bookname {
+              color: #302923;
+              font-family: $main-font;
+              font-size: 20px;
+              font-style: normal;
+              font-weight: 400;
+              line-height: normal;
+              @media (max-width: 1260px) {
+                font-size: 19px;
+              }
+              @media (max-width: 1090px) {
+                font-size: 20px;
+              }
+              @media (max-width: 820px) {
+                font-size: 19px;
+              }
+              @media (max-width: 400px) {
+                font-size: 16px;
+              }
+            }
+            .rating {
+              color: #483d35;
+              font-family: $main-font;
+              font-size: 16px;
+              font-style: normal;
+              font-weight: 400;
+              line-height: normal;
+              margin-top: 2px;
+              @media (max-width: 1260px) {
+                font-size: 15px;
+              }
+              @media (max-width: 1090px) {
+                font-size: 16px;
+              }
+              @media (max-width: 820px) {
+                font-size: 15px;
+              }
+              @media (max-width: 400px) {
+                font-size: 14px;
+              }
+            }
+            .price {
+              color: #3c2a16;
+              font-family: $main-font;
+              font-size: 24px;
+              font-style: normal;
+              font-weight: 700;
+              line-height: normal;
+              margin-top: 5px;
+              @media (max-width: 1260px) {
+                font-size: 19px;
+                margin-top: 3px;
+              }
+              @media (max-width: 1090px) {
+                font-size: 24px;
+                margin-top: 5px;
+              }
+              @media (max-width: 820px) {
+                font-size: 19px;
+                margin-top: 3px;
+              }
+            }
+          }
+        }
+        .column1 {
+          select {
+            width: 235px;
+            height: 55px;
+            padding: 0 15px;
+            flex-shrink: 0;
+            border-radius: 10px;
+            border: 1px solid #472d1c;
+            background-color: $background-color;
+            color: #796751;
+            text-align: start;
+            font-family: $main-font;
+            font-size: 23px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            letter-spacing: 0.46px;
+            text-transform: capitalize;
+            outline: none;
+            cursor: pointer;
+            @media (max-width: 1320px) {
+              width: 200px;
+            }
+            @media (max-width: 1260px) {
+              font-size: 20px;
+              height: 51px;
+            }
+            @media (max-width: 1090px) {
+              height: 55px;
+              font-size: 23px;
+            }
+            @media (max-width: 820px) {
+              height: 51px;
+              font-size: 19px;
+            }
+            @media (max-width: 700px) {
+              height: 45px;
+              width: 150px;
+              padding: 0 5px;
+            }
+            @media (max-width: 470px) {
+              width: 118px;
+              height: 36px;
+              font-size: 14px;
+            }
+            @media (max-width: 400px) {
+              width: 106px;
+            }
+          }
+        }
+        .column2 {
+          .filter {
+            display: flex;
+            flex-direction: row;
+            justify-content: end;
+            gap: 15px;
+            max-width: 235px;
+            .grid,
+            .list {
+              @extend %gridlist;
+            }
+          }
+          @media (max-width: 700px) {
+            display: none;
+          }
+        }
+        .column3 {
+          select {
+            width: 235px;
+            height: 55px;
+            flex-shrink: 0;
+            border-radius: 10px;
+            border: 1px solid #472d1c;
+            background-color: $background-color;
+            padding: 12px 16px;
+            color: #796751;
+            text-align: start;
+            font-family: $main-font;
+            font-size: 17px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            letter-spacing: 0.46px;
+            text-transform: capitalize;
+            outline: none;
+            cursor: pointer;
+            @media (max-width: 1320px) {
+              width: 200px;
+            }
+            @media (max-width: 1260px) {
+              height: 51px;
+            }
+            @media (max-width: 1090px) {
+              width: 235px;
+              height: 55px;
+            }
+            @media (max-width: 820px) {
+              height: 51px;
+              width: 200px;
+            }
+            @media (max-width: 700px) {
+              height: 45px;
+              padding: 0 5px;
+              font-size: 13px;
+              width: 150px;
+            }
+            @media (max-width: 470px) {
+              width: 118px;
+              height: 36px;
+              font-size: 10px;
+            }
+            @media (max-width: 400px) {
+              width: 106px;
+            }
+          }
+        }
+      }
+      .pagechanger {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        i {
+          color: $secondary;
+          font-size: 36px;
+          cursor: pointer;
+          @media (max-width: 500px) {
+            font-size: 20px;
+          }
+        }
+        h6 {
+          color: #472d1c;
+          font-family: $main-font;
+          font-size: 36px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: normal;
+          letter-spacing: 0.72px;
+          cursor: pointer;
+          @media (max-width: 500px) {
+            font-size: 20px;
+          }
+        }
+      }
+    }
+  }
+}

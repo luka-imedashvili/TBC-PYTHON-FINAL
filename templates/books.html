@@ -1,0 +1,420 @@
+{% extends "base.html" %} {% block content %}
+<section class="books-s-1">
+  <div class="container">
+    <div class="filter">
+      <form action="#">
+        <div class="distance category1">
+          <h3>Distance</h3>
+          <div class="distanceinputs inputwrapper">
+            <div class="diswrapper">
+              <input
+                type="text"
+                id="min"
+                name="mindis"
+                placeholder="Min: (Meters)"
+              />
+              <input type="text" name="maxdis" id="max" placeholder="Max: " />
+            </div>
+            <input type="submit" value="Filter" />
+          </div>
+        </div>
+        <div class="price category">
+          <h3>Price</h3>
+          <div class="priceinputs inputwrapper">
+            <div class="pricewrapper">
+              <input
+                type="text"
+                id="min"
+                name="min"
+                placeholder="Min: (Lari)"
+              />
+              <input type="text" name="max" id="max" placeholder="Max: " />
+            </div>
+            <input type="submit" value="Filter" />
+          </div>
+        </div>
+        <div class="author category">
+          <h3>Author</h3>
+          <div class="authorinputs inputwrapper">
+            <div class="labelwrapper">
+              <input type="checkbox" name="rowling" id="rowling" />
+              <label for="rowling">J.K.Rowling</label>
+            </div>
+            <div class="labelwrapper">
+              <input type="checkbox" name="agatha" id="agatha" />
+              <label for="agatha">Agatha Christie</label>
+            </div>
+            <div class="labelwrapper">
+              <input type="checkbox" name="green" id="green" />
+              <label for="green">John Green</label>
+            </div>
+            <div class="labelwrapper">
+              <input type="checkbox" name="collins" id="collins" />
+              <label for="collins">Suzanne Collins</label>
+            </div>
+            <div class="labelwrapper">
+              <input type="checkbox" name="tolkien" id="tolkien" />
+              <label for="tolkien">J.R.R Tolkien</label>
+            </div>
+            <div class="labelwrapper">
+              <input type="checkbox" name="lee" id="lee" />
+              <label for="lee">Harper Lee</label>
+            </div>
+            <div class="labelwrapper">
+              <input type="checkbox" name="king" id="king" />
+              <label for="king">Stephen King</label>
+            </div>
+          </div>
+        </div>
+        <div class="genres category">
+          <h3>Genres</h3>
+          <div class="labelwrapper">
+            <input type="checkbox" name="classic" id="classic" />
+            <label for="classic">Classic</label>
+          </div>
+          <div class="labelwrapper">
+            <input type="checkbox" name="fantasy" id="fantasy" />
+            <label for="fantasy">Fantasy</label>
+          </div>
+          <div class="labelwrapper">
+            <input type="checkbox" name="sci-fi" id="sci-fi" />
+            <label for="sci-fi">Science Fiction</label>
+          </div>
+          <div class="labelwrapper">
+            <input type="checkbox" name="mystery" id="mystery" />
+            <label for="mystery">Mystery</label>
+          </div>
+          <div class="labelwrapper">
+            <input type="checkbox" name="romance" id="romance" />
+            <label for="romans">Romance</label>
+          </div>
+          <div class="labelwrapper">
+            <input type="checkbox" name="hi-fi" id="hi-fi" />
+            <label for="hi-fi">Historical Fiction</label>
+          </div>
+          <div class="genresinputs inputwrapper"></div>
+        </div>
+        <div class="age category">
+          <h3>Age</h3>
+          <div class="ageinputs inputwrapper">
+            <div class="labelwrapper">
+              <input type="radio" name="0" id="0" />
+              <label for="0">0-3 Year Old</label>
+            </div>
+            <div class="labelwrapper">
+              <input type="radio" name="4" id="4" />
+              <label for="4">4-7 Year Old</label>
+            </div>
+            <div class="labelwrapper">
+              <input type="radio" name="8" id="8" />
+              <label for="8">8-12 Year Old</label>
+            </div>
+            <div class="labelwrapper">
+              <input type="radio" name="10" id="10" />
+              <label for="10">10-12 Year Old</label>
+            </div>
+            <div class="labelwrapper">
+              <input type="radio" name="13" id="13" />
+              <label for="13">13-16 Year Old</label>
+            </div>
+            <div class="labelwrapper">
+              <input type="radio" name="16" id="16" />
+              <label for="16">16-17 Year Old</label>
+            </div>
+            <div class="labelwrapper">
+              <input type="radio" name="18" id="18" />
+              <label for="18">18+ Year Old</label>
+            </div>
+          </div>
+        </div>
+        <div class="languange category">
+          <h3>Languange</h3>
+          <div class="langinputs inputwrapper">
+            <div class="labelwrapper">
+              <input type="radio" name="english" id="english" />
+              <label for="english">English</label>
+            </div>
+            <div class="labelwrapper">
+              <input type="radio" name="georgian" id="georgian" />
+              <label for="georgian">Georgian</label>
+            </div>
+            <div class="labelwrapper">
+              <input type="radio" name="german" id="german" />
+              <label for="german">German</label>
+            </div>
+            <div class="labelwrapper">
+              <input type="radio" name="spanish" id="spanish" />
+              <label for="spanish">Spanish</label>
+            </div>
+            <div class="labelwrapper">
+              <input type="radio" name="italian" id="italian" />
+              <label for="italian">Italian</label>
+            </div>
+            <div class="labelwrapper">
+              <input type="radio" name="french" id="french" />
+              <label for="french">French</label>
+            </div>
+            <div class="labelwrapper">
+              <input type="radio" name="chinese" id="chinese" />
+              <label for="chinese">Chinese</label>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="books">
+      <div class="bookdiv">
+        <div class="column1">
+          <div class="filtersdiv">
+            <select name="show" id="show">
+              <option value="20">Show: 20</option>
+              <option value="15">Show: 15</option>
+              <option value="10">Show: 10</option>
+            </select>
+            <div class="grid">
+              <img src="../images/mingcute_grid-line.png" alt="grid" />
+            </div>
+          </div>
+          <!-- card1 -->
+          <div class="bookcard1 bookcard">
+            <div class="bestsimgwrapper">
+              <img src="../images/stars.jpeg" alt="Hush,hush novel" />
+            </div>
+            <h6 class="bookname">The Fault In Our Stars</h6>
+            <h6 class="rating">
+              Rating: 3,9
+              <i class="fa-solid fa-star" style="color: #ff4d00"></i>
+            </h6>
+            <h6 class="price">9.99$</h6>
+          </div>
+          <!-- card2 -->
+          <div class="bookcard7 bookcard">
+            <div class="bestsimgwrapper">
+              <img src="../images/hunger.webp" alt="hunger Games" />
+            </div>
+            <h6 class="bookname">The Hunger Games</h6>
+            <h6 class="rating">
+              Rating: 3,8
+              <i class="fa-solid fa-star" style="color: #ff4d00"></i>
+            </h6>
+            <h6 class="price">9.99$</h6>
+          </div>
+          <!-- card3 -->
+          <div class="bookcard11 bookcard">
+            <div class="bestsimgwrapper">
+              <img src="../images/nemesis.jpg" alt="Nemesis novel" />
+            </div>
+            <h6 class="bookname">Nemesis</h6>
+            <h6 class="rating">
+              Rating: 4,0
+              <i class="fa-solid fa-star" style="color: #ff4d00"></i>
+            </h6>
+            <h6 class="price">16.99$</h6>
+          </div>
+          <!-- card4 -->
+          <div class="bookcard4 bookcard">
+            <div class="bestsimgwrapper">
+              <img src="../images/1984.jpg" alt="Hush,hush novel" />
+            </div>
+            <h6 class="lotr">1984</h6>
+            <h6 class="rating">
+              Rating: 4,4
+              <i class="fa-solid fa-star" style="color: #ff4d00"></i>
+            </h6>
+            <h6 class="price">19.99$</h6>
+          </div>
+          <!-- card5 -->
+          <div class="bookcard5 bookcard">
+            <div class="bestsimgwrapper">
+              <img src="../images/alchemist.jpeg" alt="Hush,hush novel" />
+            </div>
+            <h6 class="bookname aad">The Alchemist</h6>
+            <h6 class="rating">
+              Rating: 4,5
+              <i class="fa-solid fa-star" style="color: #ff4d00"></i>
+            </h6>
+            <h6 class="price">8.99$</h6>
+          </div>
+        </div>
+        <div class="column2">
+          <div class="filter">
+            <div class="grid">
+              <img src="../images/mingcute_grid-line.png" alt="grid" />
+            </div>
+            <div class="list">
+              <img src="../images/solar_list-broken.png" alt="list" />
+            </div>
+          </div>
+          <!-- card6 -->
+          <div class="bookcard2 bookcard">
+            <div class="bestsimgwrapper">
+              <img src="../images/agatha1.jpeg" alt="Jane Eyre" />
+            </div>
+            <h6 class="bookname">Murder On The Orient</h6>
+            <h6 class="rating">
+              Rating: 4.1
+              <i class="fa-solid fa-star" style="color: #ff4d00"></i>
+            </h6>
+            <h6 class="price">8.99$</h6>
+          </div>
+          <!-- card7 -->
+          <div class="bookcard6 bookcard">
+            <div class="bestsimgwrapper">
+              <img src="../images/hobbit.jpg" alt="Hobbit novel" />
+            </div>
+            <h6 class="bookname">The Hobbit</h6>
+            <h6 class="rating">
+              Rating: 4,1
+              <i class="fa-solid fa-star" style="color: #ff4d00"></i>
+            </h6>
+            <h6 class="price">13.99$</h6>
+          </div>
+
+          <!-- card8 -->
+          <div class="bookcard8 bookcard">
+            <div class="bestsimgwrapper">
+              <img
+                src="../images/agatha2.jpg"
+                alt="Harry Potter and the Philosophers Stone"
+              />
+            </div>
+            <h6 class="bookname">Death On The Nile</h6>
+            <h6 class="rating">
+              Rating: 4,3
+              <i class="fa-solid fa-star" style="color: #ff4d00"></i>
+            </h6>
+            <h6 class="price">13.99$</h6>
+          </div>
+          <!-- card9 -->
+          <div class="bookcard9 bookcard">
+            <div class="bestsimgwrapper">
+              <img
+                src="../images/frank.jpeg"
+                alt="The diary of a young girl novel"
+              />
+            </div>
+            <h6>The Diary Of A Young Girl</h6>
+            <h6 class="rating">
+              Rating: 4,4
+              <i class="fa-solid fa-star" style="color: #ff4d00"></i>
+            </h6>
+            <h6 class="price">15.99$</h6>
+          </div>
+          <!-- card10 -->
+          <div class="bookcard10 bookcard">
+            <div class="bestsimgwrapper">
+              <img src="../images/holly.jpeg" alt="Holly" />
+            </div>
+            <h6 class="bookname aad">Holly</h6>
+            <h6 class="rating">
+              Rating: 4,5
+              <i class="fa-solid fa-star" style="color: #ff4d00"></i>
+            </h6>
+            <h6 class="price">11.99$</h6>
+          </div>
+        </div>
+        <!-- !column3! -->
+        <div class="column3">
+          <div class="filtersdiv">
+            <select name="sortby" id="sprtby">
+              <option value="matches">
+                <span class="span">Sort By:</span> Top Matches
+              </option>
+              <option value="distance">
+                <span class="span">Sort By:</span> Distance
+              </option>
+              <option value="price">
+                <span class="span">Sort By:</span> Price
+              </option>
+            </select>
+            <div class="list">
+              <img src="../images/solar_list-broken.png" alt="list" />
+            </div>
+          </div>
+
+          <!-- card11 -->
+
+          <div class="bookcard3 bookcard">
+            <div class="bestsimgwrapper">
+              <img
+                src="../images/alaska.jpg"
+                alt="Harry Potter and the Philosophers Stone"
+              />
+            </div>
+            <h6 class="bookname">Looking For Alaska</h6>
+            <h6 class="rating">
+              Rating: 4,5
+              <i class="fa-solid fa-star" style="color: #ff4d00"></i>
+            </h6>
+            <h6 class="price">10.99$</h6>
+          </div>
+          <!-- card12 -->
+          <div class="bookcard12 bookcard">
+            <div class="bestsimgwrapper">
+              <img src="../images/thief.jpeg" alt="The Book Thief" />
+            </div>
+            <h6 class="bookname">The Book Thief</h6>
+            <h6 class="rating">
+              Rating: 4.4
+              <i class="fa-solid fa-star" style="color: #ff4d00"></i>
+            </h6>
+            <h6 class="price">11.99$</h6>
+          </div>
+          <!-- card13 -->
+          <div class="bookcard13 bookcard">
+            <div class="bestsimgwrapper">
+              <img src="../images/paper.jpeg" alt="Paper Towns" />
+            </div>
+            <h6 class="bookname">Paper Towns</h6>
+            <h6 class="rating">
+              Rating: 3.7
+              <i class="fa-solid fa-star" style="color: #ff4d00"></i>
+            </h6>
+            <h6 class="price">9.99$</h6>
+          </div>
+          <!-- card14 -->
+          <div class="bookcard14 bookcard">
+            <div class="bestsimgwrapper">
+              <img
+                src="../images/mockingbird.jpg"
+                alt="To Kill a mockingbird"
+              />
+            </div>
+            <h6>To Kill A Mockingbird</h6>
+            <h6 class="rating">
+              Rating: 4,4
+              <i class="fa-solid fa-star" style="color: #ff4d00"></i>
+            </h6>
+            <h6 class="price">15.99$</h6>
+          </div>
+          <!-- card15 -->
+          <div class="bookcard15 bookcard">
+            <div class="bestsimgwrapper">
+              <img
+                src="../images/tower.png"
+                alt="The dark Tower - Stephen King"
+              />
+            </div>
+            <h6 class="bookname">The Dark Tower</h6>
+            <h6 class="rating">
+              Rating: 3.9
+              <i class="fa-solid fa-star" style="color: #ff4d00"></i>
+            </h6>
+            <h6 class="price">17.99$</h6>
+          </div>
+        </div>
+      </div>
+      <div class="pagechanger">
+        <i class="fa-solid fa-chevron-left"></i>
+        <h6>1</h6>
+        <h6>2</h6>
+        <h6>3</h6>
+        <h6>4</h6>
+        <h6>...</h6>
+        <h6>9</h6>
+        <i class="fa-solid fa-chevron-right"></i>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

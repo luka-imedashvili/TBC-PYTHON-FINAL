@@ -1,0 +1,535 @@
+.bests-s-1 {
+  @extend %s-1;
+  .container {
+    @extend %container;
+    display: flex;
+    gap: 60px;
+    @media (max-width: 1000px) {
+      gap: 30px;
+    }
+    @media (max-width: 770px) {
+      flex-direction: column;
+      align-items: center;
+    }
+    .imgdiv {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      @media (max-width: 600px) {
+        gap: 10px;
+      }
+      .booktitle {
+        display: none;
+        max-width: 500px;
+        width: 100%;
+        @media (max-width: 770px) {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+        @media (max-width: 600px) {
+          max-width: 400px;
+        }
+        @media (max-width: 425px) {
+          align-items: start;
+          max-width: 260px;
+        }
+        h2 {
+          @extend %bookname;
+        }
+        h4 {
+          @extend %bookauthor;
+        }
+        h5 {
+          @extend %bookprice;
+        }
+      }
+      img {
+        object-fit: contain;
+        height: 712px;
+        flex-shrink: 0;
+        border-radius: 16px;
+        position: sticky;
+        top: 140px;
+        z-index: 0;
+        @media (max-width: 1000px) {
+          height: 600px;
+        }
+        @media (max-width: 770px) {
+          height: 500px;
+        }
+        @media (max-width: 550px) {
+          height: 400px;
+        }
+      }
+    }
+    .description {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+      .part1 {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        .booktitle {
+          h2 {
+            @extend %bookname;
+          }
+          h4 {
+            @extend %bookauthor;
+          }
+          h5 {
+            @extend %bookprice;
+          }
+          @media (max-width: 770px) {
+            display: none;
+          }
+        }
+        .booksummary {
+          display: flex;
+          flex-direction: column;
+          gap: 30px;
+          @media (max-width: 550px) {
+            gap: 15px;
+          }
+          p {
+            @extend %booksum;
+            #dots {
+              display: none;
+            }
+          }
+          #myBtn {
+            display: flex;
+            max-width: fit-content;
+            border-radius: 8px;
+            background-color: $primary;
+            padding: 10px 20px;
+            color: #302923;
+            border: none;
+            cursor: pointer;
+            display: none;
+            @media (max-width: 770px) {
+              display: flex;
+            }
+            &:hover {
+              background-color: #a59181;
+            }
+          }
+          #more {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            @media (max-width: 770px) {
+              display: none;
+            }
+            @media (max-width: 550px) {
+              gap: 15px;
+            }
+          }
+        }
+      }
+      .part2 {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        @media (max-width: 900px) {
+          gap: 20px;
+        }
+        .ratingquantity {
+          display: flex;
+          flex-direction: column;
+          gap: 12px;
+          // @media (max-width: 900px) {
+          //   flex-direction: row;
+          // }
+          .review {
+            display: flex;
+            gap: 10px;
+            .stars {
+              display: flex;
+              gap: 8px;
+              .fa-star,
+              .fa-star-half-stroke {
+                @extend %bookstars;
+              }
+            }
+            p {
+              @extend %bookreviews;
+            }
+          }
+          .quantity {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            background-color: $primary;
+            border-radius: 10px;
+            width: 132px;
+            padding: 5px 0px;
+            @media (max-width: 550px) {
+              width: 100px;
+            }
+            .fa-minus,
+            .fa-plus {
+              color: $secondary;
+              font-size: 16px;
+              text-align: center;
+              cursor: pointer;
+              &:hover {
+                color: #a59181;
+              }
+            }
+            h6 {
+              color: #472d1c;
+              text-align: center;
+              font-family: $main-font;
+              font-size: 24px;
+              font-style: normal;
+              font-weight: 700;
+              line-height: normal;
+              letter-spacing: 0.48px;
+              text-transform: capitalize;
+            }
+          }
+        }
+        .buy {
+          display: flex;
+          gap: 18px;
+          .buynow {
+            display: flex;
+            width: 336px;
+            height: 66px;
+            padding: 10px 19px;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            border-radius: 8px;
+            background: $primary;
+            cursor: pointer;
+            &:hover {
+              background-color: #a59181;
+            }
+            @media (max-width: 900px) {
+              width: 200px;
+              height: 50px;
+              flex-shrink: 0;
+            }
+            @media (max-width: 770px) {
+              width: 336px;
+              height: 66px;
+            }
+            @media (max-width: 550px) {
+              width: 200px;
+              height: 50px;
+            }
+            h3 {
+              color: #302923;
+              text-align: center;
+              font-family: $main-font;
+              font-size: 30px;
+              font-style: normal;
+              font-weight: 700;
+              line-height: normal;
+              letter-spacing: 0.6px;
+              @media (max-width: 900px) {
+                font-size: 23px;
+              }
+              @media (max-width: 770px) {
+                font-size: 30px;
+              }
+              @media (max-width: 550px) {
+                font-size: 23px;
+              }
+            }
+          }
+          .cart {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 66px;
+            height: 66px;
+            border: 1px solid $primary;
+            border-radius: 10px;
+            @media (max-width: 900px) {
+              width: 50px;
+              height: 50px;
+              flex-shrink: 0;
+            }
+            @media (max-width: 770px) {
+              width: 66px;
+              height: 66px;
+            }
+            @media (max-width: 550px) {
+              width: 50px;
+              height: 50px;
+              flex-shrink: 0;
+            }
+            &:hover {
+              background-color: $primary;
+              border: 1px solid #a59181;
+            }
+            .fa-cart-shopping {
+              font-size: 33px;
+              color: $secondary;
+              @media (max-width: 900px) {
+                font-size: 25px;
+              }
+              @media (max-width: 770px) {
+                font-size: 33px;
+              }
+              @media (max-width: 550px) {
+                font-size: 25px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.bests-s-2 {
+  @extend %section;
+  .container {
+    @extend %container;
+    display: flex;
+    gap: 136px;
+    @media (max-width: 1220px) {
+      gap: 60px;
+    }
+    @media (max-width: 800px) {
+      flex-direction: column;
+      gap: 30px;
+    }
+    .productdet {
+      max-width: 662px;
+      width: 100%;
+      h2 {
+        @extend %dettitle;
+      }
+      .detailswrapper {
+        display: flex;
+        justify-content: space-between;
+        .det1 {
+          display: flex;
+          flex-direction: column;
+          gap: 23px;
+          h6 {
+            color: #615240;
+            @extend %deth6;
+          }
+        }
+        .det2 {
+          display: flex;
+          flex-direction: column;
+          align-items: end;
+          gap: 23px;
+          h6 {
+            display: flex;
+            justify-content: end;
+            color: $secondary;
+            @extend %deth6;
+          }
+        }
+      }
+    }
+    .author {
+      max-width: 442px;
+      @media (max-width: 1220px) {
+        max-width: 300px;
+      }
+      @media (max-width: 800px) {
+        max-width: 1300px;
+      }
+      h2 {
+        @extend %dettitle;
+      }
+      .aboutauthor {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        border: 1px solid $secondary;
+        border-radius: 20px;
+        padding: 20px 30px 15px 20px;
+        h4 {
+          color: $titles-color;
+          font-family: $main-font;
+          font-size: 24px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: normal;
+          letter-spacing: 0.48px;
+        }
+        p {
+          color: #000;
+          font-family: $main-font;
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: normal;
+          letter-spacing: 0.32px;
+          #myBtn2 {
+            display: flex;
+            max-width: fit-content;
+            border-radius: 8px;
+            background-color: $primary;
+            padding: 10px 20px;
+            border: none;
+            color: #302923;
+            font-family: $main-font;
+            font-size: 17px;
+            cursor: pointer;
+            margin-top: 10px;
+            &:hover {
+              background-color: #a59181;
+            }
+          }
+          #more2 {
+            flex-direction: column;
+            gap: 30px;
+            display: none;
+            @media (max-width: 550px) {
+              gap: 15px;
+            }
+          }
+        }
+        .seemore {
+          display: flex;
+          max-width: fit-content;
+          border-radius: 8px;
+          background-color: $primary;
+          padding: 10px 20px;
+          cursor: pointer;
+          &:hover {
+            background-color: #a59181;
+          }
+        }
+      }
+    }
+  }
+}
+.bests-s-3 {
+  @extend %last-s;
+  .container {
+    @extend %container;
+    .alsolike {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      h3 {
+        @extend %dettitle;
+        width: 100%;
+        @media (max-width: 800px) {
+          text-align: center;
+          margin-bottom: 10px;
+        }
+      }
+      .alsolike2 {
+        display: flex;
+        justify-content: center;
+        max-width: 1240px;
+        width: 95%;
+        gap: 30px;
+        @media (max-width: 920px) {
+          gap: 15px;
+        }
+        @media (max-width: 800px) {
+          max-width: 600px;
+          width: 95%;
+          flex-wrap: wrap;
+        }
+        .bestscard {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          width: 210px;
+          border-radius: 15px;
+          border: 1px solid $border-color;
+          padding: 10px 20px;
+          &:hover {
+            background-color: $header-background;
+            border: 1px solid #a59181;
+          }
+          @media (max-width: 1150px) {
+            width: 200px;
+          }
+          @media (max-width: 450px) {
+            width: 160px;
+          }
+          @media (max-width: 360px) {
+            width: 130px;
+            padding: 10px 10px;
+          }
+
+          .bestsimgwrapper {
+            @include flex(row, center, start, wrap);
+            gap: 15px;
+            padding-bottom: 10px;
+            @media (max-width: 710px) {
+              justify-content: center;
+            }
+            img {
+              width: 116px;
+              height: 174px;
+              @media (max-width: 1150px) {
+                width: 95px;
+                height: 144px;
+              }
+            }
+          }
+          .bookname {
+            color: #302923;
+            font-family: $main-font;
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            @media (max-width: 1150px) {
+              font-size: 19px;
+            }
+          }
+
+          .rating {
+            color: #483d35;
+            font-family: $main-font;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            margin-top: 2px;
+            @media (max-width: 1150px) {
+              font-size: 15px;
+            }
+          }
+          .fa-star {
+            font-size: 13px;
+          }
+          .price {
+            color: #3c2a16;
+            font-family: $main-font;
+            font-size: 24px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            margin-top: 5px;
+            @media (max-width: 1150px) {
+              font-size: 19px;
+              margin-top: 3px;
+            }
+          }
+          .lotr {
+            font-size: 18px;
+            color: #302923;
+            @media (max-width: 1150px) {
+              font-size: 16px;
+            }
+          }
+        }
+        .bestscard7 {
+          @media (max-width: 1060px) {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}

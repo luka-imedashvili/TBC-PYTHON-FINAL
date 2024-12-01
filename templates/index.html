@@ -1,0 +1,262 @@
+{% extends "base.html" %} {% block content %}
+<section class="s-1">
+  <div id="carouselExampleIndicators" class="carousel slide">
+    <div class="carousel-indicators">
+      <button
+        type="button"
+        data-bs-target="#carouselExampleIndicators"
+        data-bs-slide-to="0"
+        class="active"
+        aria-current="true"
+        aria-label="Slide 1"
+      ></button>
+      <button
+        type="button"
+        data-bs-target="#carouselExampleIndicators"
+        data-bs-slide-to="1"
+        aria-label="Slide 2"
+      ></button>
+      <button
+        type="button"
+        data-bs-target="#carouselExampleIndicators"
+        data-bs-slide-to="2"
+        aria-label="Slide 3"
+      ></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="../static/images/bg1.avif" class="d-block w-100" alt="..." />
+      </div>
+      <div class="carousel-item">
+        <img
+          src="../static/images/library.jpeg"
+          class="d-block w-100"
+          alt="..."
+        />
+      </div>
+      <div class="carousel-item">
+        <img
+          src="../static/images/s-1image.png"
+          class="d-block w-100"
+          alt="..."
+        />
+      </div>
+    </div>
+    <button
+      class="carousel-control-prev"
+      type="button"
+      data-bs-target="#carouselExampleIndicators"
+      data-bs-slide="prev"
+    >
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button
+      class="carousel-control-next"
+      type="button"
+      data-bs-target="#carouselExampleIndicators"
+      data-bs-slide="next"
+    >
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+  <!-- <div class="quote">
+      <h2>give books a new life!</h2>
+      <a href="pages/books.html">
+        <div class="shopnow">
+          <h6>Shop Now</h6>
+        </div>
+      </a>
+    </div> -->
+</section>
+<section class="s-2">
+  <div class="my-container">
+    <h2 class="genres">Genres</h2>
+    <div class="cardswrapper wrapper">
+      {% for genre in genres %}
+      <a href="pages/books.html">
+        <div class="card">
+          <img src="../static/images/{{ genre['img']}}" alt="Fantasy Icon" />
+          <h5>{{genre['name']}}</h5>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+<section class="s-3">
+  <div class="my-container">
+    <div class="s-3title">
+      <h3>Best Sellers For Sale</h3>
+      <h6>
+        Discover what everyone's reading! Check out bestsellers near you and buy
+        your next must-read book today.
+      </h6>
+    </div>
+    <div class="bestsellerswrapper">
+      <!-- card1 -->
+      <a href="pages/hush.html" class="hush">
+        <div class="bestscard1 bestscard">
+          <div class="bestsimgwrapper">
+            <img src="images/hush.jpg" alt="Hush,hush novel" />
+            <div class="bestsbox"></div>
+          </div>
+          <h6 class="bookname">Hush, hush</h6>
+          <h6 class="rating">
+            Rating on Goodreads: 3,9
+            <i class="fa-solid fa-star" style="color: #ff4d00"></i>
+          </h6>
+          <h6 class="price">9.99$</h6>
+        </div>
+      </a>
+      <!-- card2 -->
+      <a href="pages/jane.html" class="bestscard2 bestscard">
+        <div class="bestsimgwrapper">
+          <img src="images/bests2.jpg" alt="Jane Eyre" />
+          <div class="bestsbox"></div>
+        </div>
+        <h6 class="bookname">Jane Eyre</h6>
+        <h6 class="rating">
+          Rating on Goodreads: 4.1
+          <i class="fa-solid fa-star" style="color: #ff4d00"></i>
+        </h6>
+        <h6 class="price">8.99$</h6>
+      </a>
+      <!-- card3 -->
+      <a href="pages/harry.html" class="bestscard3 bestscard">
+        <div class="bestsimgwrapper">
+          <img
+            src="images/bests3.jpg"
+            alt="Harry Potter and the Philosophers Stone"
+          />
+          <div class="bestsbox"></div>
+        </div>
+        <h6 class="bookname">Harry Potter</h6>
+        <h6 class="rating">
+          Rating on Goodreads: 4,5
+          <i class="fa-solid fa-star" style="color: #ff4d00"></i>
+        </h6>
+        <h6 class="price">10.99$</h6>
+      </a>
+      <!-- card4 -->
+      <a href="pages/lotr.html" class="bestscard4 bestscard">
+        <div class="bestsimgwrapper">
+          <img src="images/bests4.jpg" alt="Hush,hush novel" />
+          <div class="bestsbox"></div>
+        </div>
+        <h6 class="lotr">The Lord Of The Rings</h6>
+        <h6 class="rating">
+          Rating on Goodreads: 4,4
+          <i class="fa-solid fa-star" style="color: #ff4d00"></i>
+        </h6>
+        <h6 class="price">19.99$</h6>
+      </a>
+      <!-- card5 -->
+      <a href="pages/aad.html" class="bestscard5 bestscard">
+        <div class="bestsimgwrapper">
+          <img src="images/aad.jpeg" alt="Hush,hush novel" />
+          <div class="bestsbox"></div>
+        </div>
+        <h6 class="bookname aad">Antonio And David</h6>
+        <h6 class="rating">
+          Rating on Goodreads: 4,5
+          <i class="fa-solid fa-star" style="color: #ff4d00"></i>
+        </h6>
+        <h6 class="price">8.99$</h6>
+      </a>
+      <!-- card6 -->
+      <a href="pages/eden.html" class="bestscard6 bestscard">
+        <div class="bestsimgwrapper">
+          <img src="images/bests6.jpg" alt="Hush,hush novel" />
+          <div class="bestsbox"></div>
+        </div>
+        <h6 class="bookname">Martin Eden</h6>
+        <h6 class="rating">
+          Rating on Goodreads: 4,5
+          <i class="fa-solid fa-star" style="color: #ff4d00"></i>
+        </h6>
+        <h6 class="price">12.99$</h6>
+      </a>
+      <!-- card7 -->
+      <a href="pages/women.html" class="bestscard7 bestscard">
+        <div class="bestsimgwrapper">
+          <img src="images/bests7.jpg" alt="Hush,hush novel" />
+          <div class="bestsbox"></div>
+        </div>
+        <h6 class="bookname">Little Women</h6>
+        <h6 class="rating">
+          Rating on Goodreads: 4.1
+          <i class="fa-solid fa-star" style="color: #ff4d00"></i>
+        </h6>
+        <h6 class="price">14.99$</h6>
+      </a>
+      <!-- card8 -->
+      <a href="pages/prince.html" class="bestscard8 bestscard">
+        <div class="bestsimgwrapper">
+          <img src="images/prince.jpg" alt="Hush,hush novel" />
+          <div class="bestsbox"></div>
+        </div>
+        <h6 class="bookname">The Little Prince</h6>
+        <h6 class="rating">
+          Rating on Goodreads: 4.3
+          <i class="fa-solid fa-star" style="color: #ff4d00"></i>
+        </h6>
+        <h6 class="price">11.99$</h6>
+      </a>
+    </div>
+    <a href="pages/books.html"><h4 class="seemore">See More</h4></a>
+  </div>
+</section>
+<section class="s-4">
+  <div class="my-container">
+    <h3>Offers</h3>
+    <div class="offerswrapper">
+      <div class="offer1">
+        <div class="offertext">
+          <h5>Romance Books</h5>
+          <h6>40% Off</h6>
+          <a href="pages/books.html">
+            <div class="purchase">
+              <h6>Purchase</h6>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="offer2">
+        <div class="offertext">
+          <h5>Classic Literature</h5>
+          <h6>Buy One Get One Free</h6>
+          <a href="pages/books.html">
+            <div class="purchase">
+              <h6>Purchase</h6>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="s-5" id="about">
+  <div class="my-container">
+    <h3>About us</h3>
+    <div class="aboutus">
+      <div class="about">
+        <div class="uswrapper">
+          <h3>"The Bookshelf"</h3>
+          <p>
+            Old, little-known books are rarely found in official stores. And new
+            books can often be out of our budget. Also, probably all of us have
+            a desire to exchange read and abandoned books for others, new and
+            interesting works for us, we all want to renew our shelves, but I
+            found that in Georgia there was no mobile or web platform where we
+            could carry out these operations, so, there was no website for books
+            For lovers! This motivated us to create "The Bookshelf"!
+          </p>
+        </div>
+      </div>
+      <img src="images/shelf.png" alt="Library" />
+    </div>
+  </div>
+</section>
+{% endblock %}
